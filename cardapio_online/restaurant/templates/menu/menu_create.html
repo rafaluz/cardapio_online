@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h1 class="text-center mb-1 mt-5">Cadastrar Cardápio</h1>
+<p class="text-center mb-2">Aqui você pode cadastrar os seus cardápios</p>
+
+<div class="row" >
+    <div class="col-6 offset-md-3 mt-5 p-5" style="background-color: #F6F6F6;">
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row">
+                {% for field in form %}
+                {% if field.errors %}
+                <div class="col-md-12 mb-4">
+                    <label for="{{ field.name }}" class="form-label">{{ field.label }}</label>
+                    {{ field | add_class:"form-control is-invalid" }}
+        
+                    {% for erro in field.errors%}
+                    <span class="text-danger">{{ erro }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="col-md-12 mb-4">
+                    <label for="{{ field.name }}" class="form-label">{{ field.label }}</label>
+                    {{ field | add_class:"form-control" }}
+                </div>
+                {% endif %}
+                {% endfor %}
+            
+                <div class="col-12">
+                    <input type="submit" class="btn col-12 call" value="Cadastrar">
+                </div>
+            </div>
+
+
+            
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

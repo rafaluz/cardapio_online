@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Cardapio Online</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+</head>
+
+<body>
+
+    <!-- cabeçalho -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Cardápio Online</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'accounts:login'%}">Login</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteudo central -->
+    <main>
+        <section class="container conteudo-central">
+
+            <div class="row">
+                <div class="col-md-6 info-inicio">
+                    <h1>Seu cardápio na palma da mão</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta suscipit, accusamus sunt
+                        reiciendis possimus earum ex ipsum, harum repudiandae reprehenderit saepe doloribus? Odio ipsa
+                        soluta explicabo mollitia recusandae ullam odit.s</p>
+                    <a href="#" class="call">Começar agora</a>
+                </div>
+                <div class="col-md-6">
+                    <img class="imagem-cardapio" src="{% static 'img/cardapio.svg' %}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- section sobre -->
+        <section class="container-fluid sobre" id="sobre">
+            <div class="container">
+                <div class="row">
+                    <h1>Sobre</h1>
+                    <img src="{% static 'img/breakfast.svg' %}" class="row breakfast" alt="">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint totam labore magnam consectetur
+                        eligendi, modi, quo esse nam cum optio, nesciunt nemo debitis ipsam! Consectetur pariatur
+                        corrupti voluptates ullam quod.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section contato -->
+        <section class="container contato" id="contato">
+            <div class="row">
+
+                <h1>Contato</h1>
+
+                <div class="col-md-6">
+                    <h2>Localização</h2>
+
+                    <ul>
+                        <li>Rua Ficticia, 61</li>
+                        <li>Bairro ficticiliano</li>
+                        <li>Paulistana PI</li>
+                        <li>Brasil</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2>Entre em Contato</h2>
+                    <form action="">
+                        <div class="col-12">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Informe o seu nome">
+                        </div>
+                        <div class="col-12">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Informe o seu telefone">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Informe o seu email">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="mensagem" class="form-label">Mensagem</label>
+                            <textarea class="form-control" name="mensagem" id="" rows="5"
+                                placeholder="Informe sua mensagem"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- rodapé -->
+    <footer>
+        <div class="container">
+            Todos os direitos reservados &copy; <a href="https://github.com/rafaluz/cardapio_online"
+                target="_blank">Rafael Luz</a>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

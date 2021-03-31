@@ -1,0 +1,11 @@
+cardapio_online_virtual/
+*.pyc
+*.pyo
+*.json
+db.sqlite3
+settings_local.py
+venv/
+media/
+*.sqlite3
+.env
+.DS_Store

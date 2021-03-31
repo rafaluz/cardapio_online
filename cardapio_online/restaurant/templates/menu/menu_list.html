@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<h1 class="text-center mb-1">Meus Cardápios {{ hemerson }}</h1>
+<p class="text-center mb-5">Aqui você encontra todos os seus cardápios</p>
+
+<form action="." method="get">
+    <div class="row my-5 gx-5">
+        <div class="col-8">
+            <input id="search_box" name="search_box" type="text" placeholder="Informe o título do cardápio"
+                class="form-control py-3" autofocus="true" value="{{ request.GET.search_box }}">
+        </div>
+        <div class="col-4">
+            <button type="submit" class="btn py-3 col-12 call" style="border: none;" title="Clique para realizar a pesquisar">Pesquisar</button>
+        </div>
+    </div>
+</form>
+
+
+<div class="row g-5">
+    {% for menu in object_list %}
+    <div class="col-md-4">
+        <div class="card-cardapio p-4 text-center">
+            <h4>{{ menu }}</h4>
+            <img src="{% static 'img/icone-cardapio.png' %}" alt="Icone Cardápio" width="80px"
+                class="mx-auto d-block my-3">
+            <a href="{% url 'restaurant:detalhar_menu' menu.pk %}" class="btn call" style="border: none;">Ver detalhes</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

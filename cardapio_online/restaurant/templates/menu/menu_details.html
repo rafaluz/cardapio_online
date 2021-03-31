@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% load qr_code %}
+
+
+{% block content %}
+<h1 class="text-center mb-1">Detalhes do Cardápio</h1>
+<p class="text-center mb-5">Aqui você encontra os detalhes do cardápio</p>
+
+<div class="row cardapio-detalhes">
+    <div class="cardapio-detalhes-1 col-md-3  col-sm-12">
+        <img src="{% static 'img/icone-cardapio.png' %}" alt="Icone Cardápio" width="80px" class="mx-auto d-block">
+        
+        <!-- Anexo do cardápio -->
+        {% if object.attachment %}
+            <p><a href="{{object.attachment.url}}" target="_blank" class="btn botao-claro mt-4">Ver Anexo</a></p>
+        {% endif %}
+    </div>
+    <div class="cardapio-detalhes-2 col-md-9 col-sm-12 p-5 position-relative">
+        <!-- Nome do cardápio -->
+        <h1 class="mb-2">{{ object.name }}</h1>
+        <!-- Descrição do cardápio -->
+        <p>{{ object.description }}</p>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <a href="" class="btn botao-escuro my-1" data-bs-toggle="modal" data-bs-target="#qrcodeModal">Imprimir QrCode</a>
+            </div>
+            <div class="col-md-2 offset-md-5">
+                <a href="{% url 'restaurant:alterar_menu' object.pk %}" class="btn botao-escuro my-1">Editar</a>
+            </div>
+            <div class="col-md-2 ">
+                <a href="{% url 'restaurant:deletar_menu' object.pk %}" class="btn botao-vermelho my-1">Remover</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal do Qr Code-->
+<div class="modal fade" id="qrcodeModal" tabindex="-1" aria-labelledby="qrcodeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">QrCode</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <h1>Cardápio</h1>
+                <h2> {{ object.name }} </h2>
+                <div class="row text-center">
+                    {% if object.attachment %}
+                        {% qr_from_text url_cardapio size="L" %}
+                    {% else %}
+                        <p>Não há QrCode pois o cardápio não possue anexo.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary" onclick="window.print();">Imprimir</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{% endblock %}

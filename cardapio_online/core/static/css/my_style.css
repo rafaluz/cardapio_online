@@ -1,0 +1,236 @@
+header {
+    background-color: #FFA450;
+    padding: 20px 0;
+}
+
+header nav a {
+    color: #000;
+}
+
+
+
+
+/* main */
+main {
+    margin-top: 60px;
+    padding: 60px 0;
+}
+
+.info-inicio {
+    margin-bottom: 20px;
+}
+
+
+.conteudo-central h1 {
+    padding: 0px 15px 20px 0px;
+}
+
+.conteudo-central p {
+    padding: 0 15px 20px 0px;
+}
+
+.call {
+    padding: 15px 20px;
+    background-color: #FFA450;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    border: #000 solid 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.call:hover {
+    background-color: #000;
+    color:#FFA450;
+    transition: 0.5s;
+    
+}
+
+.imagem-cardapio {
+    width: 100%;
+}
+/* sobre */
+
+.sobre {
+    margin: 60px 0;
+    background-color: #2F2E41;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.sobre .breakfast {
+    margin-top: 40px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.sobre p {
+    width: 80%;
+    margin: 50px auto 0px auto;
+}
+
+
+.sobre h1 {
+    padding-top: 60px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+
+.sobre::before {
+    content: '';
+    position: absolute;
+    width: 130%;
+    height: 35%;
+    background: #FFA450;
+    z-index:-1;
+    transform: translateX(-50%) translateY(5px) rotate(2deg);
+}
+
+/* contato */
+
+.contato h1 {
+    padding-top: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 45px;
+    font-weight: bold;
+}
+
+.contato h2 {
+    text-transform: uppercase;
+    color: #FFA450;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contato ul li {
+    padding: 10px 0;
+}
+
+
+/* footer */
+
+footer {
+    padding: 30px 0;
+    /* background-color: #FFA450; */
+    
+}
+
+footer div {
+    border-top: #FFA450 solid 1px;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+.card-cardapio {
+    background-color: #FDC998;
+    border-radius: 10px;
+    min-height: 285px;
+}
+
+#search_box{
+    background-color: #E8E4E4;
+    border-radius: 10px;
+}
+
+/* Detalhes do cardápio */
+
+.cardapio-detalhes{
+    min-height: 250px;
+    background-color: #FDC998;
+    border-radius: 10px;
+    /* position: relative; */
+}
+
+
+.cardapio-detalhes .cardapio-detalhes-1 {
+    padding: 60px 20px;
+    background-color: #FFA450;
+    border-radius: 10px 0 0 10px;
+}
+
+.botao-escuro {
+    padding: 15px 20px;
+    background-color: #FFA450;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.botao-escuro:hover  {
+    background-color: #000;
+    color:#FFA450;
+    transition: 0.5s;
+    
+}
+
+.botao-claro {
+    padding: 15px 20px;
+    background-color: #FDC998;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.botao-claro:hover  {
+    background-color: #000;
+    color:#FDC998;
+    transition: 0.5s;
+    
+}
+
+.botao-vermelho {
+    padding: 15px 20px;
+    background-color: #EC0000;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.botao-vermelho:hover  {
+    background-color: #000;
+    color:#EC0000;
+    transition: 0.5s;
+    
+}
+
+
+@media screen and (max-width: 900px) {
+    .sobre p {
+        width: 95%;
+    }
+
+    .imagem-cardapio {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+    .sobre p {
+        width: 95%;
+    }
+
+    .imagem-cardapio {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+}
