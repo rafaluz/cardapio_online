@@ -48,11 +48,11 @@ class MenuDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # if self.object.attachment:
-        #     url_cardapio = str(self.request.scheme)+'://'+str(self.request.META['HTTP_HOST'])+str(self.object.attachment.url)
-        #     context.update({
-        #         'url_cardapio': url_cardapio,
-        #         })
+        if self.object.attachment:
+            url_cardapio = str(self.request.scheme)+'://'+str(self.request.META['HTTP_HOST'])+str(self.object.attachment.url)
+            context.update({
+                'url_cardapio': url_cardapio,
+                })
         return context
 
 @method_decorator(login_required, name='dispatch')
